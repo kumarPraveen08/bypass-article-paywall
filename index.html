@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paywall bypass/ Paywall Remover</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.9)
+          ),
+          url("https://images.pexels.com/photos/4090094/pexels-photo-4090094.jpeg")
+            center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #2d2d2d;
+        width: 60%;
+        text-align: center;
+        margin-top: -100px;
+      }
+      span {
+        color: rgb(160, 18, 61);
+        text-decoration: underline;
+      }
+      form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      input {
+        padding: 16px;
+        width: 500px;
+        font-size: 24px;
+        border-radius: 3px;
+        border: 2px solid black;
+        background: transparent;
+      }
+      ::placeholder {
+        color: #7c7c7c;
+      }
+      button {
+        padding: 20px;
+        border: 2px solid black;
+        background-color: black;
+        color: white;
+        font-size: 18px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgb(160, 18, 61);
+        color: white;
+        border: 2px solid black;
+      }
+      @media only screen and (max-width: 1200px) {
+        .wrapper {
+          margin: 20px;
+        }
+        h1 {
+          font-size: 3.5rem;
+          width: 100%;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        .wrapper {
+          margin: 20px;
+        }
+        h1 {
+          font-size: 2.5rem;
+          width: 100%;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+        }
+        input {
+          width: calc(100% - 40px);
+        }
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h1>
+          Unlock Knowledge, Embrace the Freedom with
+          <span>Paywall Bypass.</span>
+        </h1>
+        <form>
+          <input type="text" placeholder="https://site.com/content" autofocus />
+          <button type="button">Unlock It</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const site = document.getElementsByTagName("input")[0];
+        const btn = document.getElementsByTagName("button")[0];
+
+        const handleClick = () => {
+          console.log("clicked");
+          const url = "http://localhost:3000/article?site=" + site.value;
+          console.log(url);
+          window.location.href = url;
+        };
+
+        btn.addEventListener("click", handleClick);
+      });
+    </script>
+  </body>
+</html>

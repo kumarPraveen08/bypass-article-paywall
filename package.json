@@ -1,0 +1,25 @@
+{
+  "name": "recom",
+  "version": "1.0.0",
+  "description": "article paywall bypass / remover",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "article paywall bypass",
+    "article paywall remover",
+    "article paywall"
+  ],
+  "author": "Praveen Prajapati",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http-proxy": "^1.18.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.0.1",
+    "sass": "^1.64.2"
+  }
+}
